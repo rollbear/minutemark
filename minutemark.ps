@@ -1,0 +1,57 @@
+%!PS-Adobe-3.0
+%%BoundingBox: 0 0 595 842
+%%HiResBoundingBox: 0 0 595 842
+%%DocumentPaperSizes: A4
+%%PageSize: A4
+%%Orientation: Portrait
+%%Pages: 1
+%%EndComments
+
+
+/lowspeed 60 def
+/highspeed 140 def
+/scale 250000 def
+
+/width 595 def
+/height 842 def
+/fs 12 def
+/Times-Roman findfont fs scalefont setfont
+/inch { 72 mul } def
+/mm { inch 0.0254 div } def
+100 100 moveto
+% /width 8 inch def
+/margin 1 inch def
+/cx width 2 div def
+/y_range height margin 2 mul sub def
+/y_step y_range highspeed lowspeed sub div def
+/nm { 1852 mul scale div mm } def
+/splabel 5 string def
+
+0 margin fs sub margin 2 mul height margin 2 mul sub fs 2 mul add rectclip
+lowspeed 5 highspeed{
+    /speed exch def
+    /spl speed splabel cvs def
+    spl stringwidth /sh exch def /sw exch def
+    margin sw sub speed lowspeed sub y_step mul margin add fs 3 div sub moveto
+    speed splabel cvs show
+} for
+stroke
+initclip
+margin margin width margin 2 mul sub height margin sub 2 sub rectclip
+-20 1 20 {
+    /x exch def
+    cx x lowspeed  mul 60 div nm sub margin moveto
+    cx x highspeed mul 60 div nm sub height margin sub lineto
+} for
+lowspeed 5 highspeed 5 sub {
+    /speed exch def
+    0 1 5 {
+        /s exch def
+        /y speed s add lowspeed sub def
+        margin y y_step mul margin add moveto
+        width  y y_step mul margin add lineto
+    } for
+} for
+stroke
+
+showpage
